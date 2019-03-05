@@ -22,6 +22,17 @@ $('.btn').click( function() {
     checkAnswer(userClickedPattern.length-1);
   });
 
+$('body').on({ 'touchstart' : function(){
+  if (!started) {
+    // Changes the h1 from "Press A to Start" to the Number of the Level (Level 0 )
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+    console.log('Game has Started');
+    }
+  }
+});
+
 function nextSequence() {
   userClickedPattern = [];
     level++;
